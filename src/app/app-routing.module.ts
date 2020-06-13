@@ -1,4 +1,4 @@
-import { PrimeiroComponent } from './primeiro/primeiro.component';
+import { UsersModule } from './users/users.module';
 import { PaginaInexistenteComponent } from './pagina-inexistente/pagina-inexistente.component';
 import { SegundoModule } from './segundo/segundo.module';
 import { PrimeiroModule } from './primeiro/primeiro.module';
@@ -9,7 +9,7 @@ import { TodosModule } from './todos/todos.module';
 
 const routes: Routes = [
   {path: '**', component: PaginaInexistenteComponent},
-  {path: '', redirectTo: 'primeiro', pathMatch: 'full'}
+  {path: '', redirectTo: '/primeiro', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -17,7 +17,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     PrimeiroModule,
     SegundoModule,
-    TodosModule],
+    TodosModule,
+    UsersModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
