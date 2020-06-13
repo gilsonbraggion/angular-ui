@@ -1,0 +1,12 @@
+<p-calendar formControlName="date"
+            dateFormat="dd/mm/yy"
+            showButtonBar="true"
+            [readonlyInput]="true"
+            showIcon="true"
+            [locale]="pt"
+    #meuCalendario
+    (click)="validarComponente(meuCalendario.inputFieldValue)"
+
+
+
+></p-calendar>
