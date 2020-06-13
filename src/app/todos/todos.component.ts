@@ -20,7 +20,7 @@ export class TodosComponent implements OnInit {
       console.log(data);
       this.todos = data;
 
-    })
+    });
 
   }
 
