@@ -1,5 +1,7 @@
-<h3 class="first">Basic</h3>
-<p-table [value]="todos">
+<h3 class="first">Tabela de "Todos"</h3>
+<p-table [value]="todos" [paginator]="true" [rows]="10" >
+
+
     <ng-template pTemplate="header">
         <tr>
             <th>Id</th>
