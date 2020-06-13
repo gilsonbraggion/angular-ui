@@ -4,6 +4,7 @@ import { SegundoModule } from './segundo/segundo.module';
 import { PrimeiroModule } from './primeiro/primeiro.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TodosModule } from './todos/todos.module';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     PrimeiroModule,
-    SegundoModule],
+    SegundoModule,
+    TodosModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
