@@ -23,29 +23,30 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 
-
 export class UsersComponent implements OnInit {
 
   users: User[];
+  msgErro = '';
 
-    cols: any[];
+  cols: any[];
 
-    constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService) { }
 
     ngOnInit() {
 
-      this.usersService.buscarUsuarios().subscribe((usuarios: User[]) =>  {
+    this.usersService.buscarUsuarios().subscribe(
+      res => this.users = res,
+      err => (
+        this.msgErro = err.status
+      ),
+    () => console.log('HTTP request completed.'));
 
-        this.users = usuarios;
-
-      });
-
-      this.cols = [
-            { field: 'name', header: 'Name' },
-            { field: 'username', header: 'Username' },
-            { field: 'email', header: 'Email' },
-            { field: 'website', header: 'Website' }
-        ];
-    }
+    this.cols = [
+          { field: 'name', header: 'Name' },
+          { field: 'username', header: 'Username' },
+          { field: 'email', header: 'Email' },
+          { field: 'website', header: 'Website' }
+      ];
+  }
 
 }

@@ -1,3 +1,5 @@
+<div *ngIf="msgErro" style="background-color: red;">{{msgErro}}</div>
+
 <p-table [columns]="cols" [value]="users" dataKey="name" [paginator]="true" [rows]="5">
     <ng-template pTemplate="header" let-columns>
         <tr>
