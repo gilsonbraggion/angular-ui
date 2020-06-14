@@ -7,9 +7,12 @@ import {TableModule} from 'primeng/table';
 import {TabViewModule} from 'primeng/tabview';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'
+
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [UsersComponent],
@@ -20,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     UsersRoutingModule,
-    TabViewModule
+    TabViewModule,
+    RouterModule
   ]
 })
 export class UsersModule { }

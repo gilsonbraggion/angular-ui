@@ -1,3 +1,4 @@
+import { CadastroUserModule } from './users/cadastro-user/cadastro-user.module';
 import { UsersModule } from './users/users.module';
 import { PaginaInexistenteComponent } from './pagina-inexistente/pagina-inexistente.component';
 import { SegundoModule } from './segundo/segundo.module';
@@ -18,7 +19,8 @@ const routes: Routes = [
     PrimeiroModule,
     SegundoModule,
     TodosModule,
-    UsersModule
+    UsersModule,
+    CadastroUserModule
   ],
   exports: [RouterModule]
 })
