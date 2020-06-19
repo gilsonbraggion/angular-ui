@@ -1,13 +1,6 @@
-import { EventosModule } from './eventos/eventos.module';
-import { CadastroUserModule } from './users/cadastro-user/cadastro-user.module';
-import { UsersModule } from './users/users.module';
 import { PaginaInexistenteComponent } from './pagina-inexistente/pagina-inexistente.component';
-import { SegundoModule } from './segundo/segundo.module';
-import { PrimeiroModule } from './primeiro/primeiro.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TodosModule } from './todos/todos.module';
-
 
 const routes: Routes = [
   {path: '**', component: PaginaInexistenteComponent},
@@ -16,13 +9,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    PrimeiroModule,
-    SegundoModule,
-    TodosModule,
-    UsersModule,
-    CadastroUserModule,
-    EventosModule
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
