@@ -4,6 +4,7 @@ import { EventosComponent } from './eventos.component';
 import { NgModule } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {PanelModule} from 'primeng/panel';
+import {AccordionModule} from 'primeng/accordion';
 
 const rotasEventos: Routes = [
   { path: 'eventos', component: EventosComponent }
@@ -15,6 +16,7 @@ const rotasEventos: Routes = [
     BrowserModule,
     PanelModule,
     FormsModule,
+    AccordionModule,
     RouterModule.forChild(rotasEventos)
   ]
 })
