@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-md-6">
+    <p-panel header="Evento ao digitar no campo" [toggleable]="true" [collapsed]="true">
+      <div class="form-group">
+        <div class="alert alert-success" role="alert">
+          <label>Texto do evento ao digitar: {{textoEvento}}</label>
+        </div>
+        <input type="text" class="form-control" (input)="alteraNome($event)" placeholder="Digite um texto" />
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-md-6">
+    <p-panel header="Evento ao clicar no botão" [toggleable]="true" [collapsed]="true">
+      <div class="form-group">
+        <div class="alert alert-success" role="alert">
+          <label>Texto capturado pelo Botão: {{textoCapturado}}</label>
+        </div>
+        <input type="text" class="form-control" #campoReferencia placeholder="Digite e clique" />
+        <button type="button" class="btn btn-primary" (click)="capturarValor(campoReferencia.value)"
+          style="margin-top: 10px;">Capturar</button>
+      </div>
+    </p-panel>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <p-panel header="Validação de propriedade (Controle de botão)" [toggleable]="true" [collapsed]="true">
+      <div class="form-group">
+        <div class="alert alert-success" role="alert">
+          <label>Botão Habilitado: {{textoValidacao.length > 0}}</label>
+        </div>
+        <input type="text" class="form-control" placeholder="Digite para alterar o estado."
+          (input)="validaTexto($event)" [value]="textoValidacao" />
+        <button type="button" class="btn btn-primary" [disabled]="textoValidacao.length == 0"
+          style="margin-top: 10px;">Valida Texto</button>
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-md-6">
+    <p-panel header="Two Way Data Bind" [toggleable]="true" [collapsed]="true">
+      <div class="form-group">
+        <div class="alert alert-success" role="alert">
+          <label>Texto do evento ao digitar: {{propriedadeTwoWay}}</label>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="propriedadeTwoWay" placeholder="Digite um texto" />
+      </div>
+    </p-panel>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <p-panel header="Diretiva NG IF" [toggleable]="true" [collapsed]="true">
+      <div class="form-group">
+        <div class="alert alert-success" role="alert" *ngIf="exibir">
+          <label>Texto aparecendo de acordo com diretiva (Foco ou Blur).</label>
+        </div>
+        <input type="text" class="form-control" placeholder="Digite para alterar o estado." (focus)="exibirTextoNgIf()"
+          (blur)="ocultarTextoNgIf()" />
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-md-6">
+    <p-panel header="Diretiva NG FOR" [toggleable]="true" [collapsed]="true">
+      <div class="form-group">
+        <div class="alert alert-success" role="alert" *ngFor="let nome of listaNomes">
+          <label>Texto iterado: {{nome.texto}}</label>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+</div>
