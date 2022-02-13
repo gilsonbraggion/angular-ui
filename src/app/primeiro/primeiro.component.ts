@@ -11,5 +11,9 @@ export class PrimeiroComponent implements OnInit {
 constructor() { }
 
   ngOnInit(): void {
+
+    let nome = 'Gilson';
+
+    let joao = nome + 'Joao';
   }
 }
